@@ -1,0 +1,542 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+body {
+  font-family: 'Montserrat';
+  margin: 0px;
+}
+
+/* navigation bar */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #000;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #333;
+}
+
+h1 {
+  text-align: center;
+  font-size: 48px;
+}
+
+/* Text */
+p {
+  text-align: justify;
+  font-size: 20px;
+}
+
+
+body, html {
+  height: 100%;
+  max-width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Background image*/
+html {
+  background: url("background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+/* Homepage styling */
+.home-text {
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.5);
+  vertical-align: middle;
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -45%);
+  z-index: 2;
+  width: 60%;
+  padding: 25px;
+}
+
+/* Page styling */
+.page {
+  background:white;
+  margin: 0 auto;
+  position: absolute;
+  top: 47.2px;
+  left: 12.5%;
+  right:12.5%;
+  width: 75%;
+  min-height: 100%;
+  padding-left: 50px;
+  padding-right: 50px;
+  overflow: auto;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  transition-timing-function: ease;
+  transition-delay: 0.25s;
+}
+
+/* Page transition */
+
+.home-text {
+  animation-name: fadeInHome;
+  animation-duration: 1s;
+  transition-timing-function: ease;
+}
+
+@-webkit-keyframes fadeInHome {
+  0% {
+    opacity: 0;
+    color: white;
+    font-weight: bold;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0,0,0,0);
+    width: 60%;
+    padding: 25px;
+  }
+  100% {
+    opacity: 1;
+    color: white;
+    font-weight: bold;
+    transform: translateX(-50,-50);
+    background-color: rgba(0,0,0,0.5);
+    width: 60%;
+    padding: 25px;
+  }
+}
+
+@keyframes fadeInHome {
+  0% {
+    opacity: 0;
+    color: white;
+    font-weight: bold;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0,0,0,0);
+    width: 60%;
+    padding: 25px;
+  }
+  100% {
+    opacity: 1;
+    color: white;
+    font-weight: bold;
+    transform: translateX(-50,-50);
+    background-color: rgba(0,0,0,0.5);
+    width: 60%;
+    padding: 25px;
+  }
+}
+
+/* .page > div, .page > p {
+  animation-name: fadeIn;
+  animation-duration: 1.25s;
+  transition-timing-function: ease;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+} */
+
+
+/* Picture styling bio */
+.headshot {
+  border-radius: 50%;
+}
+
+.email, .linkedin, .google-scholar {
+  margin: 5px;
+}
+
+.container-bio > .picture {
+  display: grid;
+  grid-template-columns: 50px 1fr 1fr 1fr 1fr 50px;
+  grid-template-rows: 275px 40px 32px;
+  align-items: center;
+  justify-items: center;
+  grid-template-areas:
+  "headshot headshot headshot headshot headshot headshot"
+  ". . . . . ."
+  ". facebook email linkedin google-scholar .";
+}
+
+.headshot {grid-area: headshot;}
+
+.facebook {grid-area: facebook;}
+
+.email {grid-area: email;}
+
+.linkedin {grid-area: linkedin;}
+
+.google-scholar {grid-area: google-scholar;}
+
+.facebook:hover, .email:hover, .linkedin:hover, .google-scholar:hover {
+  opacity: 0.6;
+}
+
+/* Bio table */
+th {
+  vertical-align: top;
+  text-align: left;
+  padding-left: 5px;
+  padding-right: 25px;
+}
+
+table {
+  border-spacing: 0px 5px;
+}
+
+.icon-border, .icons {
+  vertical-align: top;
+}
+
+.table-space {
+  padding-bottom: 10px;
+}
+
+.icon-border, .table-border {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+/* CV link */
+.cv:link {
+  text-decoration: none;
+}
+
+.cv:visited {
+  text-decoration: none;
+}
+
+.cv:hover {
+  text-decoration: underline;
+}
+
+.cv:active {
+  text-decoration: underline;
+}
+
+/* CSS grid for bio */
+.page > .container-bio {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 2fr;
+  column-gap: 2rem;
+  grid-row-gap: 2rem;
+  grid-template-areas:
+  "picture quick-facts"
+  "bio bio";
+}
+
+.picture {
+  grid-area: picture;
+  align-self: center;
+  text-align: center;
+}
+
+.quick-facts {
+  grid-area: quick-facts;
+  align-self: center;
+}
+
+.bio {
+  grid-area: bio;
+}
+
+/* Research page styling */
+.Northwestern-research > p, .Prem-research > p, .JSU-research > p {
+  font-size: 16px;
+}
+
+.Northwestern-research > h2, .JSU-research > h2, .Prem-research >h2 {
+    padding-bottom: 10px;
+    border-bottom: 1.5px solid #ddd;
+}
+
+.Northwestern-research > h2, .JSU-research > h2 {
+  text-align: right;
+}
+
+.Northwestern-research > h3, .Prem-research > h3, .JSU-research >h3 {
+  display: inline;
+}
+
+/* Publication links */
+.pub:link {
+  text-decoration: none;
+}
+
+.pub:visited {
+  text-decoration: none;
+}
+
+.pub:hover {
+  text-decoration: underline;
+}
+
+.pub:active {
+  text-decoration: underline;
+}
+
+/* CSS grid for research */
+.page > .container-research {
+  display: grid;
+  grid-template-columns: 0.2fr 1fr 1fr 1fr 1fr 0.2fr;
+  grid-template-rows: 1fr 0.8fr 0.8fr;
+  grid-template-areas:
+  "Northwestern-logo Northwestern-logo Northwestern-research Northwestern-research Northwestern-research ."
+  ". Prem-research Prem-research Prem-research Prem-logo Prem-logo"
+  "JSU-logo JSU-logo JSU-research JSU-research JSU-research ."
+}
+
+.Northwestern-logo{
+  grid-area: Northwestern-logo;
+  align-self: center;
+  text-align: center;
+}
+
+.Northwestern-research {
+  grid-area: Northwestern-research;
+}
+
+.Prem-logo {
+  grid-area: Prem-logo;
+  align-self: center;
+  text-align: center;
+}
+
+.Prem-research {
+  grid-area: Prem-research;
+}
+
+.JSU-logo {
+  grid-area: JSU-logo;
+  align-self: center;
+  text-align: center;
+}
+
+.JSU-research {
+  grid-area: JSU-research;
+}
+
+@media (max-width: 900px) {
+/* Homepage styling   */
+  .home-text {
+    width: 80%;
+  }
+  @-webkit-keyframes fadeInHome {
+    0% {
+      opacity: 0;
+      color: white;
+      font-weight: bold;
+      transform: translate(-50%,-50%);
+      background-color: rgba(0,0,0,0);
+      width: 80%;
+      padding: 25px;
+    }
+    100% {
+      opacity: 1;
+      color: white;
+      font-weight: bold;
+      transform: translateX(-50,-50);
+      background-color: rgba(0,0,0,0.5);
+      width: 80%;
+      padding: 25px;
+    }
+  }
+  @keyframes fadeInHome {
+    0% {
+      opacity: 0;
+      color: white;
+      font-weight: bold;
+      transform: translate(-50%,-50%);
+      background-color: rgba(0,0,0,0);
+      width: 80%;
+      padding: 25px;
+    }
+    100% {
+      opacity: 1;
+      color: white;
+      font-weight: bold;
+      transform: translateX(-50,-50);
+      background-color: rgba(0,0,0,0.5);
+      width: 80%;
+      padding: 25px;
+    }
+  }
+/* Page styling */
+.page {
+  background:white;
+  margin: 0 auto;
+  position: absolute;
+  top: 47.2px;
+  left: 10%;
+  right:10%;
+  width: 80%;
+  min-height: 100%;
+}
+/* CSS grid for bio */
+  .page > .container-bio {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 400px 300px 1fr;
+    grid-row-gap: 3rem;
+    grid-template-areas:
+    "picture"
+    "quick-facts"
+    "bio";
+  }
+/* CSS grid for research */
+  .page > .container-research {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 250px 1fr 250px 0.8fr 250px 0.8fr;
+    grid-template-areas:
+    "Northwestern-logo"
+    "Northwestern-research"
+    "Prem-logo"
+    "Prem-research"
+    "JSU-logo"
+    "JSU-research";
+  }
+  .Northwestern-research > h2, .Prem-research > h2, .JSU-research > h2 {
+    text-align: left;
+  }
+}
+
+@media (max-width: 600px) {
+/* Homepage styling   */
+  .home-text {
+    margin: 0 auto;
+    position: absolute;
+    top: 47.2px;
+    left: 0;
+    right:0;
+    width: 100%;
+    min-height: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
+    transform: none;
+    animation-duration: 1s;
+  }
+  @-webkit-keyframes fadeInHome {
+    0% {
+      opacity: 0;
+      color: white;
+      font-weight: bold;
+      /* transform: translate(-50%,-50%); */
+      background-color: rgba(0,0,0,0);
+      width: 100%;
+      /* padding: 25px; */
+    }
+    100% {
+      opacity: 1;
+      color: white;
+      font-weight: bold;
+      /* transform: translateX(-50,-50); */
+      background-color: rgba(0,0,0,0.5);
+      width: 100%;
+      /* padding: 25px; */
+    }
+  }
+  @keyframes fadeInHome {
+    0% {
+      opacity: 0;
+      color: white;
+      font-weight: bold;
+      /* transform: translate(-50%,-50%); */
+      background-color: rgba(0,0,0,0);
+      width: 100%;
+      /* padding: 25px; */
+    }
+    100% {
+      opacity: 1;
+      color: white;
+      font-weight: bold;
+      /* transform: translateX(-50,-50); */
+      background-color: rgba(0,0,0,0.5);
+      width: 100%;
+      /* padding: 25px; */
+    }
+  }
+/* Page styling */
+.page {
+  background:white;
+  margin: 0 auto;
+  position: absolute;
+  top: 47.2px;
+  width: 100%;
+  min-height: 100%;
+  left: 0;
+  right:0;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+/* CSS grid for bio */
+  .page > .container-bio {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 400px 550px 1fr;
+    grid-row-gap: 3rem;
+    grid-template-areas:
+    "picture"
+    "quick-facts"
+    "bio";
+  }
+/* CSS grid for research */
+  .page > .container-research {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 250px 1fr 250px 0.8fr 250px 0.8fr;
+    grid-template-areas:
+    "Northwestern-logo"
+    "Northwestern-research"
+    "Prem-logo"
+    "Prem-research"
+    "JSU-logo"
+    "JSU-research";
+  }
+  .Northwestern-research > h2, .Prem-research > h2, .JSU-research > h2 {
+    text-align: left;
+  }
+}
